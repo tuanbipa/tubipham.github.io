@@ -1,3 +1,25 @@
 <html>
+	<head>
+	<title>Test join app</title>
 
+	<script type="text/javascript">
+function startMyApp()
+{
+  document.location = 'tribo://join?appid=6b7a34b9-dd35-4858-a684-a8fd993e5ea0';
+  setTimeout( function()
+  {
+      if( confirm( 'You do not seem to have Your App installed, do you want to go download it now?'))
+      {
+        document.location = 'http://itunes.apple.com/us/app/tribo';
+      }
+  }, 300);
+ }
+</script>
+
+	</head>
+	<body>
+		<a href="#" onclick="startMyApp()">Try to join my network</a>
+	</body>
 </html>
+
+
