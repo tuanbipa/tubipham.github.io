@@ -3,16 +3,25 @@
 	<title>Test join app</title>
 
 	<script type="text/javascript">
+
+	var timeout;
+  function preventPopup() {
+    clearTimeout(timeout);
+    timeout = null;
+    window.removeEventListener('pagehide', preventPopup);
+  }
+
 function startMyApp()
 {
-  document.location = 'tribo://join?appid=6b7a34b9-dd35-4858-a684-a8fd993e5ea0';
+  document.location = 'http://itunes.apple.com/us/app/tribo';
   setTimeout( function()
   {
       if( confirm( 'You do not seem to have Your App installed, do you want to go download it now?'))
       {
-        document.location = 'http://itunes.apple.com/us/app/tribo';
+        document.location = 'tribo://join?appid=6b7a34b9-dd35-4858-a684-a8fd993e5ea0';
       }
-  }, 300);
+  }, 1000);
+  window.addEventListener('pagehide', preventPopup);
  }
 </script>
 
